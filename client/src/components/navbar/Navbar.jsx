@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+const Navbar = ({setOpenModal}) => {
   return (
     <div>
         <header role="banner">
@@ -17,30 +17,32 @@ const Navbar = () => {
                 <a className="nav-link active" href="index.html">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Recipes</a>
+                <a className="nav-link" href="#dg">Recipes</a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                <a className="nav-link dropdown-toggle" href="#dr" id="dropdown04" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown04">
-                  <a className="dropdown-item" href="#">Food Catering</a>
-                  <a className="dropdown-item" href="#">Drink &amp; Beverages</a>
-                  <a className="dropdown-item" href="#">Wedding &amp; Birthday</a>
+                  <a className="dropdown-item" href="#drg">Food Catering</a>
+                  <a className="dropdown-item" href="#dg">Drink &amp; Beverages</a>
+                  <a className="dropdown-item" href="#dg">Wedding &amp; Birthday</a>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
+                <a className="nav-link" href="#rgd">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">News</a>
+                <a className="nav-link" href="#sf">News</a>
               </li>
             </ul>
 
             <ul className="navbar-nav ml-auto">
               <li className="nav-item cta-btn mr-4">
-                <a className="nav-link" href="#">SignUp</a>
+                <a onClick={()=> setOpenModal((prev)=> ({...prev, signUp: true}))} className="nav-link" href="#sds">SignUp</a>
               </li>
               <li className="nav-item cta-btn2">
-                <a className="nav-link" href="#">SignIn</a>
+                <a onClick={()=> setOpenModal((prev)=> ({...prev, signIn: true}))} 
+                className="nav-link" href="#sdf">SignIn</a>
               </li>
             </ul>
             
